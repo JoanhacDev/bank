@@ -10,24 +10,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
-    </head>
+</head>
+
 <body>
     <main>
         <form class="login-container">
             <h3>INICIAR SESIÓN</h3>
             <div>
-                <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" placeholder="Ingrese su usuario">
-            </div>
-            <div>
-                <label>Contraseña</label>
-                <div class="password-custom">
-                    <input type="password" id="password" placeholder="Ingresa su contraseña">
-                    <i class="ph ph-eye-closed" id="togglePassword"></i>
-                    <i class="ph ph-eye" id="togglePassword"></i>
+                <div>
+                    <div>
+                        <label for="usuario">Cédula de ciudadanía (C.C.)</label>
+                        <input type="text" id="cedula" placeholder="Ingrese su cédula de ciudadanía">
+                    </div>
+                    <div>
+                        <label>Contraseña</label>
+                        <div class="password-custom">
+                            <input type="password" id="password" placeholder="Ingresa su contraseña">
+                            <i class="ph ph-eye-closed" id="togglePassword"></i>
+                            <i class="ph ph-eye" id="togglePassword"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="html/menu.html" class="btn">Entrar</a>
                 </div>
             </div>
-            <button type="submit">Entrar</button>
         </form>
     </main>
     <footer class="page-footer">
