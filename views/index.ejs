@@ -1,0 +1,44 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <form class="login-container" method="post" action="/login">
+            <h3>INICIAR SESIÓN</h3>
+            <div>
+                <div>
+                    <div>
+                        <label for="usuario">Cédula de ciudadanía (C.C.)</label>
+                        <input type="number" name="cc" id="cedula" placeholder="Ingrese su cédula de ciudadanía" required autocomplete="off">
+                    </div>
+                    <div>
+                        <label>Contraseña</label>
+                        <div class="password-custom">
+                            <input type="password" name="pass" id="password" placeholder="Ingresa su contraseña" required>
+                            <i class="ph ph-eye-closed" id="togglePassword"></i>
+                            <i class="ph ph-eye" id="togglePassword"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit"  class="btn">Entrar</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include('partials/footer.ejs') %>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/password.js"></script>
+</body>
+
+</html>
