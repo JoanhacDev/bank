@@ -15,13 +15,18 @@
     <main>
         <form class="login-container" method="post" action="/login">
             <h3>INICIAR SESIÓN</h3>
-            <div>
-                <div>
-                    <div>
+            <div class="container">
+                <% if (error == true) { %>
+                    <div class="error-message-container">
+                        <p>Datos incorrectos</p>
+                    </div>
+                <% } %>
+                <div class="form-group">
+                    <div class="form-field">
                         <label for="usuario">Cédula de ciudadanía (C.C.)</label>
                         <input type="number" name="cc" id="cedula" placeholder="Ingrese su cédula de ciudadanía" required autocomplete="off">
                     </div>
-                    <div>
+                    <div class="form-field">
                         <label>Contraseña</label>
                         <div class="password-custom">
                             <input type="password" name="pass" id="password" placeholder="Ingresa su contraseña" required>
@@ -30,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="form-group">
                     <button type="submit"  class="btn">Entrar</button>
                 </div>
             </div>

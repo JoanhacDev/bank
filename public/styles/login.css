@@ -45,19 +45,19 @@ h3 {
     margin-bottom: 20px;
     font-size: 20px;
 }
-.login-container > div{
+.login-container > .container{
     display: flex;
     flex-direction: column;
     gap: 10px;
     justify-content: space-between;
     height: 100%;
 }
-.login-container > div > div{
+.login-container > .container > .form-group{
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-.login-container > div > div > div{
+.login-container > .container > .form-group > .form-field{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -79,6 +79,10 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+input:focus {
+    outline: 1px solid #0081a7;
 }
 
 label{
@@ -118,6 +122,37 @@ label{
 .btn:hover{
     background-color: #36017Ab0;
 }
+
+.error-message-container {
+    position: absolute;
+    top: 70%;
+    right: 20px;
+    background-color: #da2c3840;
+    padding: 10px 20px;
+    border-radius: 8px;
+    animation: showError 6s forwards;
+    transition: scale 0.5s;
+}
+
+@keyframes showError {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
 footer {
 	text-align: with;
 	background-color: #1d222a;

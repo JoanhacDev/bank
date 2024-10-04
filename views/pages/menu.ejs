@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -12,11 +11,26 @@
     <link rel="stylesheet" href="../styles/menu_style.css">
 </head>
 <body>
-    <%- include('../partials/nav.ejs') %>%>
+    <%- include('../partials/nav.ejs') %>
     <main>
         <div class="title">
             <h1>Bienvenido a Banco Petro</h1>
         </div>
+        <% if (successRegister == true) { %>
+            <div class="success-message-container">
+                <p>¡Registro realizado con éxito!</p>
+            </div>
+        <% } %>
+        <% if (successUpdate == true) { %>
+            <div class="success-message-container">
+                <p>¡Actualización de datos realizado con éxito!</p>
+            </div>
+        <% } %>
+        <% if (successDelete == true) { %>
+            <div class="success-message-container">
+                <p>¡Eliminación de usuario realizado con éxito!</p>
+            </div>
+        <% } %>
         <div class="content-cards">
             <div class="card">
                 <div class="card-content">

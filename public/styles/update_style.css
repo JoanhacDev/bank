@@ -240,6 +240,17 @@ select {
     font-size: 16px;
 }
 
+.select-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    z-index: 1;
+    pointer-events: none;
+    cursor: pointer;
+}
+
 .password-container {
     position: relative;
     display: flex;
@@ -250,8 +261,8 @@ select {
     outline: none;
 }
 
-.btn-eliminar {
-    background-color: #da2c38;
+.btn-actualizar {
+    background-color: #0081a7;
     padding: 6px 0;
     border-radius: 5px;
     border: none;
@@ -261,12 +272,13 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #0081a7;
     color: white;
     align-self: center;
 }
 
-.btn-eliminar:hover {
-    background-color: #da2c38b0;
+.btn-actualizar:hover {
+    background-color: #0081a7b0;
 }
 
 .form-group {
@@ -326,16 +338,34 @@ label {
     position: relative;
 }
 
+.select-custom i {
+    color: #fff;
+}
+
+.ph-eye-closed {
+    display: none;
+}
+
 .password-custom {
     display: flex;
     justify-content: center;
     position: relative;
 }
 
+.password-custom i {
+    color: #ffffff;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
 input:disabled, select:disabled{
     color: #8f8f8f;
 }
-.select-custom i, .password-custom i{
+.select-custom:has(select:disabled) i {
     display: none;
 }
 
@@ -351,7 +381,7 @@ footer {
     width: 100%;
 }
 
-footer>p {
+footer > p {
     font-size: 1rem;
     font-weight: 600;
 }

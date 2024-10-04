@@ -1,0 +1,23 @@
+
+/*TODO: Agregar las fuentes personalizadas*/
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    text-align: center;
+}
+.container h1{
+    font-size: 5rem;
+}
+.container a{
+    color: #FCA311;
+	font-size: 1.25rem;
+	font-weight: 600;
+    text-decoration: underline;
+}
+.container a:hover{
+    color: #FCA311b0;
+}

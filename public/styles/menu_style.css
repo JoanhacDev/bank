@@ -52,11 +52,12 @@ a {
 
 header {
 	flex: 1;
-	max-width: 1200;
+	max-width: 100%;
 	margin: 0 auto;
 	width: 100%;
 	position: fixed;
 	text-align: end;
+	z-index: 20;
 	background-color: #222831;
 	min-height: 80px;
 	box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -80,15 +81,9 @@ nav {
 	background-color: #1d222a;
 	transition: background-color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
+
 .navbar a:hover{
 	background-color: #12151b;
-}
-
-nav .navbar {
-	float: left;
-	background-color: #222831;
-	border: 2px solid #1d222a;
-	position: relative;
 }
 
 main {
@@ -158,6 +153,7 @@ main {
 	width: 100%;
 	border-radius: 6px;
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .reg {
@@ -179,7 +175,39 @@ main {
 .eli:hover {
 	background-color: #da2c38b0;
 }
-/*Footer*/
+
+.success-message-container {
+	position: absolute;
+	top: 70%;
+	right: 20px;
+	background-color: #38b00040;
+	padding: 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	animation: showSuccess 6s forwards;
+    transition: scale 1s;
+}
+
+@keyframes showSuccess {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Estilo para el pie de página */
 footer {
 	text-align: with;
 	background-color: #1d222a;

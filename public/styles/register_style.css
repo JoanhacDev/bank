@@ -19,12 +19,12 @@ body {
 
 header {
 	flex: 1;
-	max-width: 1200;
+	max-width: 100%;
 	margin: 0 auto;
 	width: 100%;
 	position: fixed;
 	text-align: end;
-    z-index: 99;
+	z-index: 20;
 	background-color: #222831;
 	min-height: 80px;
 	box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -50,14 +50,6 @@ nav {
 }
 .navbar a:hover{
 	background-color: #12151b;
-}
-
-
-nav .navbar {
-	float: left;
-	background-color: #222831;
-	border: 2px solid #1d222a;
-	position: relative;
 }
 
 main{
@@ -94,6 +86,7 @@ main h3{
 
 /* Estilo general para los inputs de texto y fecha */
 input[type="text"],
+input[type="number"],
 input[type="date"],
 input[type="password"] {
     width: 100%;
@@ -109,10 +102,19 @@ input[type="password"] {
     outline: none;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
+}
+
+input:focus {
+    outline: 1px solid #0081a7;
 }
 
 select {
@@ -130,6 +132,11 @@ select {
     position: relative;
     display: inline-block;
     padding-bottom: 15px;
+}
+
+#cc, #openingDate {
+    max-width: 475px;
+    width: 100%;
 }
 
 .select-container select {
@@ -173,7 +180,6 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #38b000;
     color: white;
     align-self: center;
 }
@@ -224,22 +230,7 @@ label {
     text-align: left;
 }
 
-#cedulaCiudadania {
-    width: 41.4%;
-    /* Igual que otros campos de entrada */
-    padding: 10px;
-    /* Añade relleno para comodidad */
-    box-sizing: border-box;
-    /* Incluye el relleno y el borde en el ancho total */
-    font-size: 16px;
-    /* Tamaño de fuente consistente */
-    line-height: 1.5;
-    /* Altura de línea adecuada */
-    border-radius: 5px;
-    border: 1px solid #222831;
-    background-color: #222831;
-    color: #ffffff;
-}
+
 
 .select-custom{
     display: flex;
@@ -260,18 +251,6 @@ label {
     /* Espacio debajo del input */
 }
 
-#fechaApertura {
-    width: 41.4%;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    line-height: 1.5;
-    border-radius: 5px;
-    border: 1px solid #222831;
-    background-color: #222831;
-    color: #ffffff;
-}
-
 .ph-eye-closed{
     display: none;
 }
@@ -289,6 +268,9 @@ label {
     cursor: pointer;
     font-size: 20px;
 }
+
+
+/* Estilo para el pie de página */
 
 footer {
 	text-align: with;
