@@ -67,6 +67,7 @@ app.get('/menu', (req, res) => {
         msgSuccessRegister = false
         msgSuccessUpdate = false
         msgSuccessDelete = false
+        msgError = false
     } else {
         res.redirect(303, '/');
     }
@@ -131,7 +132,6 @@ app.post('/menu/update/validating', (req, res) => {
                 console.log("No se encuentra la cédula");
                 msgError = true
                 valid = false
-                console.log(msgError)
                 res.redirect('/menu/update')
             }
         });
