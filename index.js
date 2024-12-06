@@ -1,10 +1,19 @@
 
 
-const express = require('express');
+// const express = require('express');
+import express from 'express';
 const app = express();
 const port = process.env.PORT || 3030;
-const connection = require('./db/conexion.js');
-const path = require('path');
+import { turso } from './db/conexion.js';
+
+
+// const path = require('path');
+import path from 'path';
+
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -44,10 +53,9 @@ app.post('/login', (req, res) => {
     const cc = parseInt(req.body.cc);
     const pass = req.body.pass;
     // console.log(cc, pass);
-    const consulta = `SELECT CC, password FROM trabajadores WHERE CC = ${cc} AND password = '${pass}'`;
-    connection.query(consulta, (error, results) => {
-        if (error) throw error;
-        if (results.length > 0) {
+    async function main() {
+        const result = await turso.execute("SELECT * FROM trabajadores WHERE CC = ? AND password = ?", [cc, pass]);
+        if (result.rows.length > 0) {
             isLoggedIn = true;
             res.redirect('/menu');
         } else {
@@ -55,7 +63,20 @@ app.post('/login', (req, res) => {
             msgError = true;
             console.log('No Verificado');
         }
-    });
+    }
+    main();
+    // const consulta = `SELECT CC, password FROM trabajadores WHERE CC = ${cc} AND password = '${pass}'`;
+    // connection.query(consulta, (error, results) => {
+    //     if (error) throw error;
+    //     if (results.length > 0) {
+    //         isLoggedIn = true;
+    //         res.redirect('/menu');
+    //     } else {
+    //         res.redirect('/');
+    //         msgError = true;
+    //         console.log('No Verificado');
+    //     }
+    // });
 
 });
 
